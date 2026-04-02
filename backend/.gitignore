@@ -1,0 +1,8 @@
+# Backend build and node artifacts
+node_modules/
+dist/
+.env
+npm-debug.log*
+.yarn-integrity
+coverage/
+*.log

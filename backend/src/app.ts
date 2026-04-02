@@ -1,0 +1,21 @@
+import express from 'express';
+import cors from 'cors';
+import authRoutes from './routes/auth';
+import taskRoutes from './routes/tasks';
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
+app.use('/auth', authRoutes);
+app.use('/tasks', taskRoutes);
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK' });
+});
+
+export default app;
